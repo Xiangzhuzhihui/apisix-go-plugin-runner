@@ -31,9 +31,9 @@ import (
 	"github.com/ReneKroon/ttlcache/v2"
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/plugin"
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/plugin"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 )
 
 const (

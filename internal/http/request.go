@@ -32,10 +32,10 @@ import (
 	hrc "github.com/api7/ext-plugin-proto/go/A6/HTTPReqCall"
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
-	"github.com/apache/apisix-go-plugin-runner/pkg/common"
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/common"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 )
 
 type Request struct {

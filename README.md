@@ -54,6 +54,12 @@ The structure of the apache/apisix-go-plugin-runner repository on GitHub is as f
 `internal` is responsible for the internal implementation, `pkg` displays the external interface, and `cmd` provides examples of the demonstration.
 There is a subdirectory of `go-runner` under the `cmd` directory. By reading the code in this section, you can learn how to use Go Plugin Runner in practical applications.
 
+Protobuf using protoc to generate Go files
+```shell
+protoc --proto_path=. --go_out=./ --go-grpc_out=./ api/proto/v1/loginService.proto
+```
+Too Many [Apache APISIX Developer Guide](https://apisix.apache.org/docs/go-plugin-runner/developer-guide/)
+
 ## How it Works
 
 At present, the communication between Go Plugin Runner and Apache APISIX is an RPC based on Unix socket. So Go Plugin Runner and Apache APISIX need to be deployed on the same machine.

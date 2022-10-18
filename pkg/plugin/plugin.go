@@ -20,8 +20,8 @@ package plugin
 import (
 	"net/http"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/plugin"
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/plugin"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
 )
 
 // Plugin represents the Plugin

@@ -21,7 +21,7 @@ import (
 	"bytes"
 	"net/http"
 
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
 )
 
 // ResponseRecorder is an implementation of pkgHTTP.Response that

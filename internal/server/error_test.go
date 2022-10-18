@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/plugin"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/plugin"
 	A6Err "github.com/api7/ext-plugin-proto/go/A6/Err"
 	"github.com/stretchr/testify/assert"
 )

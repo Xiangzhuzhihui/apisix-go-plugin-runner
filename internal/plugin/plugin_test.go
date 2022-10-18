@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	inHTTP "github.com/apache/apisix-go-plugin-runner/internal/http"
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
+	inHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/http"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
 
 	hreqc "github.com/api7/ext-plugin-proto/go/A6/HTTPReqCall"
 	hrespc "github.com/api7/ext-plugin-proto/go/A6/HTTPRespCall"

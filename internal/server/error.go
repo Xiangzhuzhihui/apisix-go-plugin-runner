@@ -24,7 +24,7 @@ import (
 	A6Err "github.com/api7/ext-plugin-proto/go/A6/Err"
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
 )
 
 type UnknownType struct {

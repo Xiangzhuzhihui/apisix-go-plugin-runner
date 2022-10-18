@@ -1,10 +1,11 @@
-module github.com/apache/apisix-go-plugin-runner
+module github.com/Xiangzhuzhihui/apisix-go-plugin-runner
 
 go 1.15
 
 require (
 	github.com/ReneKroon/ttlcache/v2 v2.4.0
 	github.com/api7/ext-plugin-proto v0.6.0
+	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/flatbuffers v2.0.0+incompatible
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
@@ -13,6 +14,8 @@ require (
 	go.uber.org/zap v1.17.0
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0
 	golang.org/x/tools v0.1.9 // indirect
+	google.golang.org/grpc v1.36.0
+	google.golang.org/protobuf v1.26.0
 )
 
 replace (

@@ -24,12 +24,12 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
-	"github.com/apache/apisix-go-plugin-runner/pkg/common"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/common"
 	ei "github.com/api7/ext-plugin-proto/go/A6/ExtraInfo"
 
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 	"github.com/api7/ext-plugin-proto/go/A6"
 	hrc "github.com/api7/ext-plugin-proto/go/A6/HTTPRespCall"
 	flatbuffers "github.com/google/flatbuffers/go"

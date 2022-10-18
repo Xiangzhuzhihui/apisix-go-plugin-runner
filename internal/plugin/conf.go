@@ -27,8 +27,8 @@ import (
 	pc "github.com/api7/ext-plugin-proto/go/A6/PrepareConf"
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 )
 
 var (

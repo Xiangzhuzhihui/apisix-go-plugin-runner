@@ -26,7 +26,7 @@ import (
 	flatbuffers "github.com/google/flatbuffers/go"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
 )
 
 func getStopAction(t *testing.T, b *flatbuffers.Builder) *hrc.Stop {

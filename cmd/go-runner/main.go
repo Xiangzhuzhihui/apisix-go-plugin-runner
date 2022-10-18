@@ -29,9 +29,9 @@ import (
 	"github.com/thediveo/enumflag"
 	"go.uber.org/zap/zapcore"
 
-	_ "github.com/apache/apisix-go-plugin-runner/cmd/go-runner/plugins"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
-	"github.com/apache/apisix-go-plugin-runner/pkg/runner"
+	_ "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/cmd/go-runner/plugins"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/runner"
 )
 
 var (

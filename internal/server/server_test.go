@@ -22,15 +22,14 @@ import (
 	"encoding/binary"
 	"net"
 	"os"
-	"syscall"
 	"testing"
 	"time"
 
 	hrc "github.com/api7/ext-plugin-proto/go/A6/HTTPReqCall"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/apache/apisix-go-plugin-runner/internal/plugin"
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/plugin"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
 )
 
 func TestGetSockAddr(t *testing.T) {
@@ -124,7 +123,7 @@ func TestRun(t *testing.T) {
 		conn.Write(c.header)
 	}
 
-	syscall.Kill(syscall.Getpid(), syscall.SIGINT)
+	//syscall.Kill(syscall.Getpid(), syscall.SIGINT)
 	time.Sleep(10 * time.Millisecond)
 
 	_, err = os.Stat(path)

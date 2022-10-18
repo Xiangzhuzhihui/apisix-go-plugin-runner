@@ -23,7 +23,7 @@ import (
 
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 )
 
 const (

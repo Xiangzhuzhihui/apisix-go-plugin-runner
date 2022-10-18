@@ -28,10 +28,10 @@ import (
 	hrespc "github.com/api7/ext-plugin-proto/go/A6/HTTPRespCall"
 	flatbuffers "github.com/google/flatbuffers/go"
 
-	inHTTP "github.com/apache/apisix-go-plugin-runner/internal/http"
-	"github.com/apache/apisix-go-plugin-runner/internal/util"
-	pkgHTTP "github.com/apache/apisix-go-plugin-runner/pkg/http"
-	"github.com/apache/apisix-go-plugin-runner/pkg/log"
+	inHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/http"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/internal/util"
+	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
+	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 )
 
 type ParseConfFunc func(in []byte) (conf interface{}, err error)
