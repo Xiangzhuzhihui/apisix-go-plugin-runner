@@ -1,0 +1,17 @@
+api/
+build/
+cmd/
+docs/
+gen/
+internal/
+pkg/
+.asf.yaml
+.gitignore
+.golangci.yml
+.licenserc.yaml
+CHANGELOG.md
+go.mod
+LICENSE
+Makefile
+NOTICE
+README.md

@@ -104,6 +104,16 @@ APISIX_LISTEN_ADDRESS=unix:/tmp/runner.sock ./go-runner run
 
 Notice that we specify the socket address to be used for `go-runner` communication through the environment variable `APISIX_LISTEN_ADDRESS`. This address needs to be consistent with the configuration in Apache APISIX.
 
+Start Etcd
+```shell
+docker run -d -p 2379:2379 --name etcd --env ETCD_ENABLE_V2="true" --env ALLOW_NONE_AUTHENTICATION="yes" --env ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379" --env ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379" bitnami/etcd:3.4.15
+```
+
+Start Apisix
+```shell
+docker run -d -p 9180:9180 -p 9080:9080 -p 9091:9091 -p 9443:9443 -p 9092:9092 -v /D/docker/apisix/plugins/xzzhAuth:/plugins/xzzhAuth -v /D/docker/apisix/config/config.yaml:/usr/local/apisix/conf/config.yaml:ro  apache/apisix:2.15.0-centos
+```
+
 ## License
 
 Apache 2.0 LICENSE
