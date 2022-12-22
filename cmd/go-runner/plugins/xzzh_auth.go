@@ -90,7 +90,7 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 		}
 	}
 	token := r.Header().Get("Authorization")
-	if len(token) < 1 {
+	/*if len(token) < 1 {
 		w.WriteHeader(200)
 		ret, jsonErr := json.Marshal(XzzhResult{StatusCode: 3007, Msg: "未携带 jwt token 或者 Basic，进行认证"})
 		if jsonErr != nil {
@@ -101,7 +101,7 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 			log.Errorf("failed to write: %s", err)
 		}
 		return
-	}
+	}*/
 	result := postLoginService(token, method, path, &xzzhAuthConf)
 	if result.StatusCode == 2000 {
 		for _, v := range xzzhAuthConf.ExternalLinks {
