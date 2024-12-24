@@ -58,6 +58,9 @@ Protobuf using protoc to generate Go files
 ```shell
 protoc --proto_path=. --go_out=./ --go-grpc_out=./ api/proto/v1/loginService.proto
 ```
+
+tool see [protoc install](https://blog.csdn.net/hblzong/article/details/141333726)
+
 Too Many [Apache APISIX Developer Guide](https://apisix.apache.org/docs/go-plugin-runner/developer-guide/)
 
 ## How it Works

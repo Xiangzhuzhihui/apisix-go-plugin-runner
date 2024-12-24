@@ -89,30 +89,23 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 			return
 		}
 	}
+	for _, v := range xzzhAuthConf.ExternalLinks {
+		if strings.HasPrefix(path, v) {
+			return
+		}
+	}
 	token := r.Header().Get("Authorization")
-	/*if len(token) < 1 {
-		w.WriteHeader(200)
-		ret, jsonErr := json.Marshal(XzzhResult{StatusCode: 3007, Msg: "未携带 jwt token 或者 Basic，进行认证"})
-		if jsonErr != nil {
-			log.Errorf("Json Marshal Error1: %s", jsonErr)
-		}
-		_, err := w.Write(ret)
-		if err != nil {
-			log.Errorf("failed to write: %s", err)
-		}
-		return
-	}*/
 	result := postLoginService(token, method, path, &xzzhAuthConf)
 	if result.StatusCode == 2000 {
-		for _, v := range xzzhAuthConf.ExternalLinks {
-			if strings.HasPrefix(path, v) {
-				return
-			}
-		}
 		args := r.Args()
 		addParam := result.ApisixUserInfo.AddPathParam
 		for k, v := range addParam {
 			args.Set(k, v)
+		}
+		header := r.Header()
+		addHeader := result.ApisixUserInfo.AddHeaderParam
+		for k, v := range addHeader {
+			header.Set(k, v)
 		}
 		return
 	}

@@ -37,6 +37,7 @@ message ApiSixUserInfo {
   string aud = 2;
   uint64 audId = 3;
   map<string, string> addPathParam = 4;
+  map<string, string> addHeaderParam = 5;
 }
 
 service ApiSixServer {
