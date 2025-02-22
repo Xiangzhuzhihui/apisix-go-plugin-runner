@@ -99,13 +99,17 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 	if result.StatusCode == 2000 {
 		args := r.Args()
 		addParam := result.ApisixUserInfo.AddPathParam
-		for k, v := range addParam {
-			args.Set(k, v)
+		if addParam != nil {
+			for k, v := range addParam {
+				args.Set(k, v)
+			}
 		}
 		header := r.Header()
 		addHeader := result.ApisixUserInfo.AddHeaderParam
-		for k, v := range addHeader {
-			header.Set(k, v)
+		if addHeader != nil {
+			for k, v := range addHeader {
+				header.Set(k, v)
+			}
 		}
 		return
 	}
