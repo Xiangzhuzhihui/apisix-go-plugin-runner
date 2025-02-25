@@ -49,6 +49,7 @@ type XzzhAuth struct {
 type XzzhResult struct {
 	StatusCode int32  `json:"statusCode"`
 	Msg        string `json:"msg"`
+	ErrorCode  string `json:"errorCode"`
 }
 
 type XzzhAuthConf struct {
@@ -114,7 +115,7 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 		return
 	}
 	w.WriteHeader(200)
-	re, jsonErr := json.Marshal(XzzhResult{StatusCode: result.GetStatusCode(), Msg: result.Msg})
+	re, jsonErr := json.Marshal(XzzhResult{StatusCode: result.GetStatusCode(), Msg: result.Msg, ErrorCode: result.GetErrorCode()})
 	if jsonErr != nil {
 		log.Errorf("Json Marshal Error2: %s", jsonErr)
 	}

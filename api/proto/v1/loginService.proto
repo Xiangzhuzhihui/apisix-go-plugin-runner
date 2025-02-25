@@ -30,6 +30,7 @@ message ResultApiSix {
   int32 statusCode = 1;
   string msg = 2;
   ApiSixUserInfo apisixUserInfo = 3;
+  string errorCode = 4;
 }
 
 message ApiSixUserInfo {
