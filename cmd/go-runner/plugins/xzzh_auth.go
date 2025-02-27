@@ -61,6 +61,8 @@ type XzzhAuthConf struct {
 	ExternalLinks []string `json:"external_links"`
 	// 不需要鉴权和认证的路径
 	IgnoreLinks []string `json:"ignore_links"`
+	// 鉴权需要的头信息
+	RequestHeaders []string `json:"request_headers"`
 }
 
 func (p *XzzhAuth) Name() string {
@@ -96,7 +98,11 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 		}
 	}
 	token := r.Header().Get("Authorization")
-	result := postLoginService(token, method, path, &xzzhAuthConf)
+	requestHeadersMap := make(map[string]string)
+	for _, v := range xzzhAuthConf.RequestHeaders {
+		requestHeadersMap[v] = r.Header().Get(v)
+	}
+	result := postLoginService(token, requestHeadersMap, method, path, &xzzhAuthConf)
 	if result.StatusCode == 2000 {
 		args := r.Args()
 		addParam := result.ApisixUserInfo.AddPathParam
@@ -131,7 +137,7 @@ func (p *XzzhAuth) ResponseFilter(conf interface{}, w pkgHTTP.Response) {
 
 // Validate method: 请求方式
 // path: 请求路径
-func postLoginService(token string, method string, path string, conf *XzzhAuthConf) *pb.ResultApiSix {
+func postLoginService(token string, requestHeadersMap map[string]string, method string, path string, conf *XzzhAuthConf) *pb.ResultApiSix {
 	// Set up a connection to the server.
 	conn, err := grpc.Dial(conf.Url, grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
@@ -151,7 +157,7 @@ func postLoginService(token string, method string, path string, conf *XzzhAuthCo
 	clientDeadline := time.Now().Add(3 * time.Second)
 	ctx, cancel := context.WithDeadline(context.Background(), clientDeadline)
 	defer cancel()
-	result, err := c.DecodeAndVerifyV3(ctx, &pb.Jwt{Jwt: token, Path: method + ":" + path})
+	result, err := c.DecodeAndVerifyV3(ctx, &pb.Jwt{Jwt: token, Path: method + ":" + path, RequestHeaderMap: requestHeadersMap})
 	if err != nil {
 		//获取错误状态
 		stats, ok := status.FromError(err)
