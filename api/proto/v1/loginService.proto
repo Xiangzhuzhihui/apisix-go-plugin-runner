@@ -39,7 +39,10 @@ message ApiSixUserInfo {
   string aud = 2;
   uint64 audId = 3;
   map<string, string> addPathParam = 4;
-  map<string, string> addHeaderParam = 5;
+  // jwt所面向的用户的类型: 0 ->客户, 1->adm, 6->openPlatform
+  uint32 subType = 5;
+  // 需要添加在请求头中的参数
+  map<string, string> addHeaderParam = 6;
 }
 
 service ApiSixServer {
