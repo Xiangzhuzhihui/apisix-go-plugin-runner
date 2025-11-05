@@ -19,18 +19,20 @@ package plugins
 
 import (
 	"encoding/json"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 	"net/http"
 	"strings"
 
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+
 	"context"
+	"time"
+
 	pb "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/gen/api/v1/loginService"
 	pkgHTTP "github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/http"
 	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/log"
 	"github.com/Xiangzhuzhihui/apisix-go-plugin-runner/pkg/plugin"
 	"google.golang.org/grpc"
-	"time"
 )
 
 func init() {
@@ -120,6 +122,7 @@ func (p *XzzhAuth) RequestFilter(conf interface{}, w http.ResponseWriter, r pkgH
 		}
 		return
 	}
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	re, jsonErr := json.Marshal(XzzhResult{StatusCode: result.GetStatusCode(), Msg: result.Msg, ErrorCode: result.GetErrorCode()})
 	if jsonErr != nil {
